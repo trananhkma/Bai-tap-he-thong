@@ -1,6 +1,6 @@
 #BTTL2_Tao_bang_va_insert_du_lieu_2
 
-***Note: Làm giống Database_1, không giải thích gì thêm!***
+***Note: Làm giống Database_1.md, không giải thích gì thêm!***
 
     create database thuc_hanh_2;
     use thuc_hanh_2;
