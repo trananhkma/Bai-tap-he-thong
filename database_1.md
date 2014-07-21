@@ -18,11 +18,18 @@ Khóa chính là IDKhuVuc (Khu Vực)
 	primary key (IDKhuVuc)
 	);
 	
-	
-2. Bảng DAY (Dãy) <br>
+2. Bảng DAY (dãy): <br>	
 Khóa chính là STTDay, khóa ngoại là IDKhuVuc
 
-	create table DAY(STTDay int not null auto_increment,IDKhuVuc varchar(10) not null,Ten varchar(30),PhongBV 				varchar(10),primary key (STTDay),FOREIGN KEY (IDKhuVuc) REFERENCES KHUVUC(IDKhuVuc));
+	create table DAY
+	(
+	STTDay int not null auto_increment,
+	IDKhuVuc varchar(10) not null,
+	Ten varchar(30),
+	PhongBV varchar(10),
+	primary key (STTDay),
+	FOREIGN KEY (IDKhuVuc) REFERENCES KHUVUC(IDKhuVuc)
+	);
 
 3. Bảng PHONG (Phòng)<br>
 Khóa ngoại là IDKhuVuc và STTDay
