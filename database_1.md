@@ -20,6 +20,7 @@ Khóa chính là IDKhuVuc (Khu Vực)
 	
 2. Bảng DAY (Dãy) <br>
 Khóa chính là STTDay, khóa ngoại là IDKhuVuc
+
 create table DAY
 (
 STTDay int not null auto_increment,
@@ -33,6 +34,7 @@ FOREIGN KEY (IDKhuVuc) REFERENCES KHUVUC(IDKhuVuc)
 
 3. Bảng PHONG (Phòng)<br>
 Khóa ngoại là IDKhuVuc và STTDay
+
 create table PHONG
 (
 IDKhuVuc varchar(10) not null,
