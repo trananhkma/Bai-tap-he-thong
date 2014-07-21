@@ -1,13 +1,13 @@
 ﻿#BTTL2_Tao_bang_va_insert_du_lieu_1
 
-Đăng nhập với quyền root và tạo cơ sở dữ liệu:
+###I/Đăng nhập với quyền root và tạo cơ sở dữ liệu:
 	
 	mysql -u root -p1
 	database thuc_hanh_1;
 	use thuch_hanh_1;
 
-Sau đó tạo các bảng biểu: <br>
-1. Bảng KHUVUC: <br>
+###II/Tạo các bảng biểu: <br>
+####1. Bảng KHUVUC: <br>
 Khóa chính là IDKhuVuc (Khu Vực)
 
 	create table KHUVUC
@@ -18,7 +18,7 @@ Khóa chính là IDKhuVuc (Khu Vực)
 	primary key (IDKhuVuc)
 	);
 	
-2. Bảng DAY (dãy): <br>	
+####2. Bảng DAY (dãy): <br>	
 Khóa chính là STTDay, khóa ngoại là IDKhuVuc
 
 	create table DAY
@@ -31,7 +31,7 @@ Khóa chính là STTDay, khóa ngoại là IDKhuVuc
 	FOREIGN KEY (IDKhuVuc) REFERENCES KHUVUC(IDKhuVuc)
 	);
 
-3. Bảng PHONG (Phòng)<br>
+####3. Bảng PHONG (Phòng)<br>
 Khóa ngoại là IDKhuVuc và STTDay
 
 	create table PHONG
@@ -45,13 +45,13 @@ Khóa ngoại là IDKhuVuc và STTDay
 	foreign key (STTDay) references DAY(STTDay)
 	);
 
-Nhập dữ liệu:
+###III/Nhập dữ liệu:
 
 	insert into KHUVUC(IDKhuVuc, TenKhuVuc, PhongQL) values ('KV01','Khu Vuc 1','QL1');
 	insert into KHUVUC(IDKhuVuc, TenKhuVuc, PhongQL) values ('KV02','Khu Vuc 2','QL2');
 	insert into KHUVUC(IDKhuVuc, TenKhuVuc, PhongQL) values ('KV03','Khu Vuc 3','QL3');
 
-######
+#### 
 
 	insert into DAY(IDKhuVuc, Ten, PhongBV) values ('KV01','DAY 1','BV1');
 	insert into DAY(IDKhuVuc, Ten, PhongBV) values ('KV01','DAY 2','BV2');
@@ -60,7 +60,7 @@ Nhập dữ liệu:
 	insert into DAY(IDKhuVuc, Ten, PhongBV) values ('KV03','DAY 5','BV5');
 	insert into DAY(IDKhuVuc, Ten, PhongBV) values ('KV03','DAY 6','BV6');
 
-######
+#### 
 
 	insert into PHONG(IDKhuVuc, STTDay, IDPhong, SucChua, PhongTB) values ('KV01','1','P1','10','TB1');
 	insert into PHONG(IDKhuVuc, STTDay, IDPhong, SucChua, PhongTB) values ('KV01','1','P2','9','TB2');
