@@ -18,6 +18,12 @@ Khóa chính là IDKhuVuc (Khu Vực)
 	primary key (IDKhuVuc)
 	);
 	
+
+jkhghjg
+	jhghjg
+	kjkjh
+	
+	
 2. Bảng DAY (Dãy) <br>
 Khóa chính là STTDay, khóa ngoại là IDKhuVuc
 
