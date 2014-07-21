@@ -1,8 +1,10 @@
 #BTTL2_Tao_bang_va_insert_du_lieu_2
 
+***Note: Làm giống Database_1, không giải thích gì thêm!
+
     create database thuc_hanh_2;
     use thuc_hanh_2;
-#####
+##### 
     create table DOISX
     (
     IDDOISX varchar(10) not null,
@@ -10,7 +12,7 @@
     IDDOITRUONG varchar(10) not null,
     constraint doisx primary key (IDDOISX,IDDOITRUONG)
     );
-#####
+##### 
     create table TOSX
     (
     IDDOISX varchar(10) not null,
@@ -20,7 +22,7 @@
     constraint tosx primary key (STT,IDTOTRUONG),
     foreign key (IDDOISX) references DOISX(IDDOISX)
     );
-#####
+##### 
     create table CONGNHAN 
     (
     IDDOISX varchar(10) not null,
@@ -33,6 +35,6 @@
     foreign key (STTTO) references TOSX(STT),
     foreign key (IDDOISX) references DOISX(IDDOISX)
     );
-#####
+##### 
     insert into DOISX(IDDOISX, TENDOI, IDDOITRUONG) values ('G1','DOI 1','DT1');
     insert into DOISX(IDDOISX, TENDOI, IDDOITRUONG) values ('G2','DOI 2','DT2');
