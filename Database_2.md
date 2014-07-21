@@ -49,9 +49,6 @@
     insert into TOSX(IDDOISX, TEN, IDTOTRUONG) values ('G2','TO 3','TT3');
     insert into TOSX(IDDOISX, TEN, IDTOTRUONG) values ('G2','TO 4','TT4');
 # 
-    insert into CONGNHAN(IDDOISX, IDCONGNHAN, HOTEN, NAMSINH, STTTO, IDNQL)
-    values ('G1','CN1','Nguyen Van A', '1988', '1', 'QL1');
-# 
-    insert into CONGNHAN(IDDOISX, IDCONGNHAN, HOTEN, NAMSINH, STTTO, IDNQL)
-    values ('G1','CN2','Nguyen Van B', '1989', '1', 'QL1');
+    insert into CONGNHAN(IDDOISX, IDCONGNHAN, HOTEN, NAMSINH, STTTO, IDNQL) values ('G1','CN1','Nguyen Van A', '1988', '1', 'QL1');
+    insert into CONGNHAN(IDDOISX, IDCONGNHAN, HOTEN, NAMSINH, STTTO, IDNQL) values ('G1','CN2','Nguyen Van B', '1989', '1', 'QL1');
     
