@@ -4,7 +4,7 @@
 	
 	mysql -u root -p1
 	create database thuc_hanh_1;
-	use thuch_hanh_1;
+	use thuc_hanh_1;
 
 ###II/Tạo các bảng biểu: <br>
 ####1. Bảng KHUVUC: <br>
