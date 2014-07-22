@@ -3,7 +3,7 @@
 ###I/Đăng nhập với quyền root và tạo cơ sở dữ liệu:
 	
 	mysql -u root -p1
-	database thuc_hanh_1;
+	create database thuc_hanh_1;
 	use thuch_hanh_1;
 
 ###II/Tạo các bảng biểu: <br>
