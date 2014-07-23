@@ -30,25 +30,25 @@ Sau đó khởi động lại card mạng:
 
     /etc/init.d/networking restart
 
-##1. How to Assign a IP Address to Specific Interface
+##1. Cấp phát IP cho một cổng:
 
-The following command used to assign IP Address to a specific interface (eth1) on the fly.
+Ví dụ: Đặt IP 192.168.50.5 cho cổng eth1
 
     # ip addr add 192.168.50.5 dev eth1
 ###### 
     $ sudo ip addr add 192.168.50.5 dev eth1
 
-***Note:** Unfortunately all these settings will be lost after a system restart.*
+***Chú ý:** *Nếu làm theo cách này thì cấu hình sẽ bị mất sau khi hệ thống khởi động lại.*
 
-##2. How to Check an IP Address
+##2. Hiện thị địa chỉ IP:
 
-To get the depth information of your network interfaces like IP Address, MAC Address information, use the following command as shown below.
+Để xem các thông tin về mạng như: địa chỉ IP, địa chỉ MAC, sử dụng câu lệnh sau:
 
     # ip addr show
 ###### 
     $ sudo ip addr show
 
-Sample Output
+Màn hình output sẽ như sau:
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -66,39 +66,38 @@ Sample Output
         inet6 fe80::20c:29ff:fe28:fd56/64 scope link
             valid_lft forever preferred_lft forever
 
-##3. How to Remove an IP Address
+##3. Xóa một địa chỉ IP:
 
-The following command will remove an assigned IP address from the given interface (eth1).
+Ví dụ: Xóa IP đã cấp lúc trước của cổng eth1:
 
     # ip addr del 192.168.50.5/24 dev eth1
 ###### 
     $ sudo ip addr del 192.168.50.5/24 dev eth1
 
-##4. How to Enable Network Interface
+##4. Bật một cổng mạng:
 
-The “up” flag with interface name (eth1) enables a network interface. For example, the following command will activates the eth1 network interface.
-
+Điều này tương đương với đặt trạng thái cho cổng mạng là "up":
     # ip link set eth1 up
 ###### 
     $ sudo ip link set eth1 up
 
-##5. How to Disable Network Interface
+##5. Tắt một cổng mạng:
 
-The “down” flag with interface name (eth1) disables a network interface. For example, the following command will De-activates the eth1 network interface.
+Điều này tương đương với đặt trạng thái cho cổng mạng là "down"
 
     # ip link set eth1 down
 ###### 
     $ sudo ip link set eth1 down
 
-##6. How do I Check Route Table?
+##6. Hiển thị bảng IP table:
 
-Type the following command to check the routing table information of system.
+Hiển thị thông tin về các dải mạng, đường đi của các gói tin trong mạng
 
     # ip route show
 ###### 
     $ sudo ip route show
 
-Sample Output
+Màn hình hiển thị:
 
     10.10.20.0/24 via 192.168.50.100 dev eth0
     192.168.160.0/24 dev eth1  proto kernel  scope link  src 192.168.160.130  metric 1
@@ -106,17 +105,16 @@ Sample Output
     169.254.0.0/16 dev eth0  scope link  metric 1002
     default via 192.168.50.1 dev eth0  proto static
 
-##7. How do I Add Static Route
+##7. Định tuyến tĩnh:
 
-Why you need to add Static routes or Manual routes, because that the traffic must not pass through the default gateway. We need to add Static routes to pass traffic from best way to reach the destination.
+Đôi khi cần đặt định tuyến tĩnh thay cho động để định ra đường đi tối ưu hơn
 
     # ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
 ###### 
     $ sudo ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
 
-##8. How to Remove Static Route
+##8. Xóa định tuyến tĩnh:
 
-To remove assigned static route, simply type the following command.
 
     # ip route del 10.10.20.0/24
 ###### 
@@ -124,16 +122,15 @@ To remove assigned static route, simply type the following command.
 
 ##9. How do I Add Persistence Static Routes
 
-All the above route will be lost after a system restart. To add permanent Static route, edit file /etc/sysconfig/network-scripts/route-eth0 (We are storing static route for (eth0) and add the following lines and save and exist. By default route-eth0 file will not be there, need to be created.
-###For RHEL/CentOS/Fedora
+Tất cả cấu hình định tuyến sẽ mất sau khi hệ thống khởi động lại. Để tránh điều này, ta sửa file /etc/sysconfig/network-scripts/route-eth0. Ở đây là đặt IP 192.168.50.100 cho cổng eth0. Làm tương tự với các cổng khác.
+###Đối với RHEL/CentOS/Fedora
 
     # vi /etc/sysconfig/network-scripts/route-eth0
     10.10.20.0/24 via 192.168.50.100 dev eth0
 
-###For Ubuntu/Debian/Linux Mint
+###Đối với Ubuntu/Debian/Linux Mint
 
-Open the file /etc/network/interfaces and at the end add the persistence Static routes. IP Addresses may differ in your environment.
-
+Mở và sửa file /etc/network/interfaces như sau:
     $ sudo vi /etc/network/interfaces
 ###### 
     auto eth0
@@ -144,18 +141,18 @@ Open the file /etc/network/interfaces and at the end add the persistence Static 
     #########{Static Route}###########
     up ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
 
-Next, restart network services after entering all the details using the following command.
+Sau đó khởi động lại network để hệ thống áp dụng cấu hình mới.
 
     # /etc/init.d/network restart
 ###### 
     $ sudo /etc/init.d/network restart
 
-##10. How do I Add Default Gateway
+##10. Đặt Default Gateway
 
-Default gateway can be specified globally or for in interface-specific config file. Advantage of default gateway is If we have more than one NIC is present in the system. You can add default gateway on the fly as shown below command.
+Default gateway là cổng mạng đầu tiên gói tin phải đi qua khi muốn ra mạng khác. Ta có thể đặt như sau:
 
     # ip route add default via 192.168.50.100
 ###### 
     $ sudo ip route add default via 192.168.50.100
 
-Kindly correct me if i missed out. Please refer manual page doing man ip from terminal/command prompt to know more about IP Command.
+Có thể dùng "man ip" để biết thêm thông tin về các biến khác. Chúc vui! :)
