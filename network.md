@@ -120,9 +120,9 @@ Màn hình hiển thị:
 ###### 
     $ sudo ip route del 10.10.20.0/24
 
-##9. How do I Add Persistence Static Routes
+##9. Định tuyến tĩnh vĩnh viễn:
 
-Tất cả cấu hình định tuyến sẽ mất sau khi hệ thống khởi động lại. Để tránh điều này, ta sửa file /etc/sysconfig/network-scripts/route-eth0. Ở đây là đặt IP 192.168.50.100 cho cổng eth0. Làm tương tự với các cổng khác.
+Tất cả cấu hình định tuyến ở trên sẽ mất sau khi hệ thống khởi động lại. Để tránh điều này, ta sửa file /etc/sysconfig/network-scripts/route-eth0. Ở đây là đặt IP 192.168.50.100 cho cổng eth0. Làm tương tự với các cổng khác.
 ###Đối với RHEL/CentOS/Fedora
 
     # vi /etc/sysconfig/network-scripts/route-eth0
