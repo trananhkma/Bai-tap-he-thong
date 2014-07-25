@@ -8,16 +8,16 @@
 	scp username@remotehost:file_name /some/local/directory
 
 #####2. Copy một file từ localhost lên remotehost:
-  scp file_name username@remotehost:/some/remote/directory
+  	scp file_name username@remotehost:/some/remote/directory
   
 #####3. Copy thư mục foo vào thư mục bar:
-  scp -r foo username@remotehost:/some/remote/directory/bar
+  	scp -r foo username@remotehost:/some/remote/directory/bar
   
 #####4. Copy 2 file lên remotehost:
-  scp file1 file2 your_username@remotehost:/root
+	scp file1 file2 your_username@remotehost:/root
   
 #####5. Copy file từ remotehost1 sang remotehost2:
-  scp username@rh1.edu:/some/remote/directory/file_name username@rh2.edu:/some/remote/directory/
+	scp username@rh1.edu:/some/remote/directory/file_name username@rh2.edu:/some/remote/directory/
 
 #####6. Copy qua cổng 2246:
-  scp -P 2246 file_name username@remotehost.edu:/some/remote/directory
+  	scp -P 2246 file_name username@remotehost.edu:/some/remote/directory
