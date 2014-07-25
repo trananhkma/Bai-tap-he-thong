@@ -114,13 +114,13 @@ Thực hiện điều này với tham số **-l**. Đơn vị của băng thông
 
 Chú ý: **-P** chứ không phải **-p**
 
-######7. Copy tất cả file và thư mục trong thư mục chỉ định
+#####7. Copy tất cả file và thư mục trong thư mục chỉ định
 Ta có thể dùng tham số **-r** để làm điều đó:
 	scp -r documents mrarianto@202.x.x.x:.
 	
 Sau khi lệnh này chạy xong, ta sẽ tìm thấy thư mục *document* với toàn bộ file ở trong nó tại thư mục đích.
 
-######8. Tắt thông báo và đo lường trạng thái
+#####8. Tắt thông báo và đo lường trạng thái
 Bình thường khi sử dụng SCP sẽ có những thông báo và đo lường mạng như băng thông, thời gian còn lại...<br>
 Để tắt nó đi, ta sử dụng tham số **-q**
 
