@@ -1,6 +1,5 @@
-#BTTL2_Tao_bang_va_insert_du_lieu_2
+#Giải bài tập mysql 2 (bt2_mysql.pdf)
 
-####***Note: Làm giống Database_1.md, không giải thích gì thêm!***
 #####Tạo database:
 
     create database thuc_hanh_2;
