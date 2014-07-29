@@ -1,4 +1,4 @@
-﻿#BTTL2_Tao_bang_va_insert_du_lieu_1
+﻿#Giải bài tập mysql 1 (bt1_mysql.pdf)
 
 ###I/Đăng nhập với quyền root và tạo cơ sở dữ liệu:
 	
