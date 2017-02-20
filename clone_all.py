@@ -20,16 +20,16 @@ def get_repo_from_api():
     while True:
         print('Collecting page %s' % page)
         r = requests.get(URL + '?page=%s' % page, headers=headers)
-        if r.ok:
-            content = r.json()
-            repos += [i['clone_url'] for i in content]
-            if len(content) == 30:
-                page += 1
-                continue
-            break
-        else:
+        if not r.ok:
             print('Failed to connect to Github')
             print('Try again...')
+            continue
+        content = r.json()
+        repos += [i['clone_url'] for i in content]
+        if len(content) == 30:
+            page += 1
+            continue
+        break
     with open(FILE, 'w') as f:
         for repo in repos:
             f.write(repo + '\n')
